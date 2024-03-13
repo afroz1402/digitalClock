@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        #BODY{
+            text-align: center;
+            font-size: 50PX;
+        }
+        .c{
+            color: palegreen;
+        }
+    </style>
+</head>
+<body onload="magic()" id="BODY">
+    <h1 class="c" id="ROJU"></h1>
+    <h2 class="c" id="TEDI"></h2>
+    <h3 class="c" id="SAMAYAM"></h3>
+    <script>
+        function magic()
+        {
+        var date = new Date()
+        var day= date.getDay()
+        switch(day)
+        {
+            case 0:document.getElementById('ROJU').innerHTML='Sunday'
+                   document.getElementById('BODY').style.backgroundImage="url(../GEWA-04/SUNDAY.webp0)"
+                   document.getElementById('BODY').style.backgroundSize="100% 600px"
+            break;
+            case 1:document.getElementById('ROJU').innerHTML='Monday'
+            document.getElementById('BODY').style.backgroundImage="url(../GEWA-04/MONDAY.jpg)"
+            document.getElementById('BODY').style.backgroundSize="100% 600px"
+            break;
+            case 2:document.getElementById('ROJU').innerHTML='Tuesday'
+            document.getElementById('BODY').style.backgroundImage="url(../GEWA-04/TUESDAY.jpg)"
+            document.getElementById('BODY').style.backgroundSize="100% 600px"
+            break;
+            case 3:document.getElementById('ROJU').innerHTML='Wednesday'
+            document.getElementById('BODY').style.backgroundImage="url(../GEWA-04/WEDNESDAY.avif)"
+            document.getElementById('BODY').style.backgroundSize="100% 600px"
+            break;
+            case 4:document.getElementById('ROJU').innerHTML='Thursday'
+            document.getElementById('BODY').style.backgroundImage="url(../GEWA-04/THURSDAY.jpg)"
+            document.getElementById('BODY').style.backgroundSize="100% 600px"
+            break
+            case 5:document.getElementById('ROJU').innerHTML='Friday'
+            document.getElementById('BODY').style.backgroundImage="url(../GEWA-04/FRIDAY.jpg)"
+            document.getElementById('BODY').style.backgroundSize="100% 600px"
+            break;
+            case 6:document.getElementById('ROJU').innerHTML='Saturday'
+            document.getElementById('BODY').style.backgroundImage="url(../GEWA-04/SATURDAY.jpg)"
+            document.getElementById('BODY').style.backgroundSize="100% 600px"
+            break;
+        }
+
+        var dd=date.getDate()
+        var mon=date.getMonth()+1
+        var yy=date.getFullYear()
+        switch(mon)
+        {
+            case 1: mon='JAN'
+            break;
+            case 2: mon='FEB'
+            break;
+            case 3: mon='MAR'
+            break;
+            case 4: mon='APR'
+            break;
+            case 5: mon='MAY'
+            break
+            case 6: mon='JUN'
+            break;
+            case 7: mon='JUL'
+            break;
+            case 8: mon='AUG'
+            break;
+            case 9: mon='SEP'
+            break;
+            case 10: mon='OCT'
+            break;
+            case 11: mon='NOV'
+            break;
+            case 12: mon='DEC'
+            break;
+        }
+        var tedi=dd +" - " +mon +" - "+yy
+        document.getElementById('TEDI').innerHTML=tedi
+
+        var hh=date.getHours()
+        var min=date.getMinutes()
+        var sec=date.getSeconds()
+        var milisec=date.getMilliseconds()
+        var AMorPM='AM'
+        if (hh>=12)
+        {
+            AMorPM='PM'
+            if(hh>12)
+            {
+                hh-=12
+            }
+            else if(hh==0)
+            {
+                hh=12
+            }
+        }
+        var samayam=hh + " : " + min + " : "+ sec + " : "+milisec+"  "+ AMorPM
+        document.getElementById('SAMAYAM').innerHTML=samayam
+        var update=setTimeout(function(){magic(),1000})
+    }
+    </script>
+</body>
+</html>
